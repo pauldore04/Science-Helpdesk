@@ -1,0 +1,131 @@
+.login {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.brand {
+  display: flex;
+  align-items: flex-end;
+  padding: 3rem;
+  color: #fff;
+  background: var(--th-gradient);
+}
+
+.brand__org {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brand__title {
+  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.brand__subtitle {
+  margin: 0.5rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 24rem;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.card__hint {
+  margin: -0.75rem 0 0.5rem;
+  color: var(--th-text-muted);
+}
+
+.card__link {
+  align-self: flex-start;
+  color: var(--th-red);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.field__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.field__input {
+  padding: 0.75rem;
+  font: inherit;
+  border: 1px solid var(--th-border);
+  border-radius: 0;
+
+  &:focus {
+    outline: 2px solid var(--th-red);
+    outline-offset: -1px;
+  }
+}
+
+.field__input--error {
+  border-color: var(--th-red);
+}
+
+.field__error {
+  font-size: 0.875rem;
+  color: var(--th-red);
+}
+
+.button {
+  padding: 0.875rem;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  background: var(--th-red);
+  border: none;
+  border-radius: 0;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--th-violet);
+  }
+}
+
+.notice {
+  margin: 0;
+  padding: 0.75rem;
+  background: var(--th-surface);
+  border-left: 4px solid var(--th-orange);
+}
+
+@media (max-width: 768px) {
+  .login {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .brand {
+    padding: 2rem 1rem;
+  }
+}

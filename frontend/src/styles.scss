@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+// Farben angelehnt an das TH-Köln-Corporate-Design (Näherungswerte)
+:root {
+  --th-orange: #ea5b0c;
+  --th-red: #e3004f;
+  --th-violet: #8b1d72;
+  --th-gradient: linear-gradient(
+    135deg,
+    var(--th-orange) 0%,
+    var(--th-red) 50%,
+    var(--th-violet) 100%
+  );
+
+  --th-text: #1a1a1a;
+  --th-text-muted: #5c5c5c;
+  --th-border: #b3b3b3;
+  --th-surface: #f2f2f2;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  color: var(--th-text);
+  background: #fff;
+}

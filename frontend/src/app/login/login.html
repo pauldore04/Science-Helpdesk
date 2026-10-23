@@ -1,0 +1,52 @@
+<main class="login">
+  <section class="brand">
+    <div>
+      <p class="brand__org">TH Köln</p>
+      <h1 class="brand__title">Science Helpdesk</h1>
+      <p class="brand__subtitle">C&amp;R</p>
+    </div>
+  </section>
+
+  <section class="panel">
+    <form class="card" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <h2 class="card__title">Anmelden</h2>
+      <p class="card__hint">Bitte melde dich mit deiner Campus-ID an.</p>
+
+      <label class="field">
+        <span class="field__label">Campus-ID oder E-Mail</span>
+        <input
+          class="field__input"
+          type="text"
+          formControlName="username"
+          autocomplete="username"
+          [class.field__input--error]="showError('username')"
+        />
+        @if (showError('username')) {
+          <span class="field__error">Bitte gib deine Campus-ID oder E-Mail ein.</span>
+        }
+      </label>
+
+      <label class="field">
+        <span class="field__label">Passwort</span>
+        <input
+          class="field__input"
+          type="password"
+          formControlName="password"
+          autocomplete="current-password"
+          [class.field__input--error]="showError('password')"
+        />
+        @if (showError('password')) {
+          <span class="field__error">Bitte gib dein Passwort ein.</span>
+        }
+      </label>
+
+      <button class="button" type="submit">Anmelden</button>
+
+      @if (notice()) {
+        <p class="notice" role="status">{{ notice() }}</p>
+      }
+
+      <a class="card__link" href="#" (click)="$event.preventDefault()">Passwort vergessen?</a>
+    </form>
+  </section>
+</main>
