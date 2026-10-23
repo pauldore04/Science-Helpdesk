@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: science-helpdesk-db
+    environment:
+      POSTGRES_DB: ${DB_NAME:-science_helpdesk}
+      POSTGRES_USER: ${DB_USER:-helpdesk}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-helpdesk}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

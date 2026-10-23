@@ -1,0 +1,23 @@
+# Node / Angular
+node_modules/
+dist/
+.angular/
+npm-debug.log*
+
+# Java / Maven
+target/
+*.class
+*.log
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
