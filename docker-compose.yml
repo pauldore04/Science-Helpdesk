@@ -1,0 +1,26 @@
+# Ganze App: docker compose up --build
+# Nur Datenbank: docker compose -f database/docker-compose.yml up -d
+include:
+  - database/docker-compose.yml
+
+services:
+  backend:
+    build: ./backend
+    container_name: science-helpdesk-backend
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/${DB_NAME:-science_helpdesk}
+      DB_USER: ${DB_USER:-helpdesk}
+      DB_PASSWORD: ${DB_PASSWORD:-helpdesk}
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    container_name: science-helpdesk-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
